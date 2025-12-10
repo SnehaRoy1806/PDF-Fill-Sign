@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Worker, Viewer } from '@react-pdf-viewer/core';
 import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 import { Type, ImageIcon, Calendar, CheckCircle, PenTool, Save, Menu, Move, Trash2, UploadCloud } from 'lucide-react';
@@ -6,7 +6,7 @@ import { Type, ImageIcon, Calendar, CheckCircle, PenTool, Save, Menu, Move, Tras
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
-const pdfjsVersion = '3.0.279'; 
+const pdfjsVersion = '3.11.174';
 const workerUrl = `https://unpkg.com/pdfjs-dist@${pdfjsVersion}/build/pdf.worker.min.js`;
 
 export default function App() {
