@@ -157,10 +157,13 @@ app.post('/api/sign-pdf', async (req, res) => {
         }
     }
 
-    // 5. Response
+    const protocol = req.headers['x-forwarded-proto'] || 'http';
+    const host = req.get('host'); // Gets 'my-app.onrender.com' or 'localhost:5000'
+    const fullUrl = `${protocol}://${host}/uploads/${fileName}`;
+
     res.json({
       success: true,
-      url: `http://localhost:5000/uploads/${fileName}`,
+      url: fullUrl, 
       auditTrail: { originalHash, finalHash }
     });
 
